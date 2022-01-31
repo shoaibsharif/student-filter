@@ -16,6 +16,7 @@ const DepartmentCard = (props: {
       )}&subject=${encodeURIComponent(subject)}`;
     else location.search = "";
   };
+
   useEffect(() => {
     if (
       departmentRef.current &&
@@ -38,11 +39,13 @@ const DepartmentCard = (props: {
       >
         {props.department.name}
       </div>
+
       {isTruncated && (
         <div className="department-name-tooltip invisible peer-hover:visible">
           <div className="tooltip-content">{props.department.name}</div>
         </div>
       )}
+
       <div className="subjects-wrapper">
         {props.department.subjects.map((subject, subjectIdx) => (
           <div

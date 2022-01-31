@@ -35,13 +35,15 @@ const Layout: React.FC = (props) => {
     return activeDepartment;
   };
 
+  const toggleNavList = () => setExpanded(!expanded);
+
   return (
     <Fragment>
       <header>
         <section
           className={classNames("filter-list", expanded ? "expanded" : "")}
         >
-          <a className="btn btn-expand" onClick={() => setExpanded(!expanded)}>
+          <a className="btn btn-expand" onClick={toggleNavList}>
             {expanded ? "-" : "+"}
           </a>
           <div className="department-list">
