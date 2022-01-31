@@ -41,7 +41,10 @@ const Layout: React.FC = (props) => {
     <Fragment>
       <header>
         <section
-          className={classNames("filter-list", expanded ? "expanded" : "")}
+          className={classNames(
+            "filter-list",
+            expanded ? "filter-list--state-expanded" : ""
+          )}
         >
           <a className="btn btn-expand" onClick={toggleNavList}>
             {expanded ? "-" : "+"}

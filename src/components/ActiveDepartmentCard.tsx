@@ -57,7 +57,7 @@ const ActiveDepartmentCard = (activeDepartment: IDepartment) => {
   return (
     <div className="department">
       <div
-        className="dept-name active peer"
+        className="dept-name dept-name--state-active peer"
         ref={(el) => {
           if (el) shouldDeptTruncated(el?.offsetWidth < el?.scrollWidth);
         }}
@@ -65,7 +65,7 @@ const ActiveDepartmentCard = (activeDepartment: IDepartment) => {
         {activeDepartment.name}
       </div>
       {deptTruncated && (
-        <div className="department-name-tooltip invisible peer-hover:visible">
+        <div className="invisible department-name-tooltip peer-hover:visible">
           <div className="tooltip-content">{activeDepartment.name}</div>
         </div>
       )}
@@ -74,7 +74,7 @@ const ActiveDepartmentCard = (activeDepartment: IDepartment) => {
           <div
             className={classNames(
               "subject-name",
-              subjectIdx == 0 ? "active" : "",
+              subjectIdx == 0 ? "subject-name--state-active" : "",
               truncateNode && truncateNode <= subjectIdx && !subjectExpanded
                 ? "hidden"
                 : "block"

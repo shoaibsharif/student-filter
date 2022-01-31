@@ -32,7 +32,7 @@ const DepartmentCard = (props: {
         className={classNames(
           "dept-name peer",
           props.activeDepartment.name.includes(props.department.name)
-            ? "active"
+            ? "dept-name--state-active"
             : ""
         )}
         ref={departmentRef}
@@ -51,7 +51,9 @@ const DepartmentCard = (props: {
           <div
             className={classNames(
               "subject-name",
-              props.activeDepartment.subjects[0] === subject ? "active" : ""
+              props.activeDepartment.subjects[0] === subject
+                ? "subject-name--state-active"
+                : ""
             )}
             key={`subject-${subjectIdx}`}
             onClick={() => changeQueryParams(props.department.name, subject)}
